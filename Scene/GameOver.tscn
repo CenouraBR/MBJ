@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scene/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://Tilemap/Game Over2.png" type="Texture" id=2]
+[ext_resource path="res://Tilemap/Game Over.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "gameover",
+"speed": 2.0
+} ]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.44437, 1.44437 )
+frames = SubResource( 1 )
+animation = "gameover"
+frame = 1
+playing = true
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite"]
+position = Vector2( 342.184, 172.667 )
+scale = Vector2( 0.488102, 0.488102 )
+current = true
+zoom = Vector2( 0.9, 0.8 )

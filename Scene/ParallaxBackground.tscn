@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tilemap/BG/CloudsBack.png" type="Texture" id=1]
+[ext_resource path="res://Tilemap/BG/CloudsFront.png" type="Texture" id=2]
+[ext_resource path="res://Tilemap/BG/BGBack.png" type="Texture" id=3]
+[ext_resource path="res://Tilemap/BG/BGFront.png" type="Texture" id=4]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+editor/display_folded = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2( 0, -400 )
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 864, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+scale = Vector2( 1.0129, 1 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2( 0, -400 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 864, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer2"]
+scale = Vector2( 1.0129, 1 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+editor/display_folded = true
+position = Vector2( 0, -400 )
+motion_scale = Vector2( 0.8, 1 )
+motion_mirroring = Vector2( 0, 864 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer3"]
+scale = Vector2( 1.0129, 1 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+editor/display_folded = true
+position = Vector2( 0, -400 )
+motion_mirroring = Vector2( 864, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer4"]
+position = Vector2( 3, 0 )
+scale = Vector2( 1.0129, 1.00385 )
+texture = ExtResource( 4 )
+centered = false

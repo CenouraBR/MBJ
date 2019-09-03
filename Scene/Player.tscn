@@ -1,0 +1,69 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Scene/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/JUMP/sheet_hero_jump1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/JUMP/sheet_hero_jump2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/JUMP/sheet_hero_jump3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/JUMP/sheet_hero_jump4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/JUMP/sheet_hero_jump5.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/WAlKING/sheet_hero_walk1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/WAlKING/sheet_hero_walk2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/WAlKING/sheet_hero_walk3.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/IDLE/sheet_hero_idle2.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/IDLE/sheet_hero_idle3.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/IDLE/sheet_hero_idle4.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/IDLE/sheet_hero_idle5.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/IDLE/sheet_hero_idle6.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/IDLE/sheet_hero_idle7.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/IDLE/sheet_hero_idle8.png" type="Texture" id=16]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 10.4019
+height = 7.57137
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Walking",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 6.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+editor/display_folded = true
+position = Vector2( 189, -128 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+gravity = 550
+speed = 10000
+jump = 13000
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.478821, 13.2094 )
+shape = SubResource( 1 )
+
+[node name="Zezim" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -1.19748 )
+frames = SubResource( 2 )
+animation = "Walking"
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.8, 0.8 )
+limit_left = 0
+limit_top = -384
+limit_right = 1870
+limit_bottom = 128
